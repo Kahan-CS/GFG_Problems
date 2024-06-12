@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f35bf407-e847-46b1-b62f-28d4068dc3cb}</ProjectGuid>
+    <ProjectGuid>{0C5AC8E1-A1CD-4CCC-9530-00D692184888}</ProjectGuid>
     <RootNamespace>GFGProblems</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>POTD - June04 2024</ProjectName>
