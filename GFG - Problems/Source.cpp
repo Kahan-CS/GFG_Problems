@@ -1,0 +1,102 @@
+//{ Driver Code Starts
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable : 4996)
+
+using namespace std;
+
+class Array {
+public:
+    template <class T>
+    static void input(vector<T>& a, int n) {
+        for (int i = 0; i < n; i++) {
+            scanf("%d ", &a[i]);
+        }
+    }
+
+    template <class T>
+    static void print(vector<T>& a) {
+        for (int i = 0; i < a.size(); i++) {
+            cout << a[i] << " ";
+        }
+        cout << endl;
+    }
+};
+
+
+// } Driver Code Ends
+
+class Solution {
+public:
+    long long maxTip(int n, int x, int y, vector<int>& arr, vector<int>& brr) {
+        // code here
+        vector<pair<int, int>> DifferenceArr;
+
+        for (int i = 0; i < n; i++)
+        {
+            DifferenceArr.push_back(make_pair(brr.at(i) - arr.at(i), i));
+        }
+
+        vector<int> FinalArrayOfTips;
+        FinalArrayOfTips = arr;
+
+        sort(DifferenceArr.begin(), DifferenceArr.end());
+
+        int ReplacementNumber = 0;
+
+        int i = n-1;
+
+        while (ReplacementNumber <= y && DifferenceArr[i].first >= 0)
+        {
+            FinalArrayOfTips[DifferenceArr[i].second] = brr.at(DifferenceArr[i].second);
+            ReplacementNumber++;
+            i--;
+
+        }
+
+        long long sum = 0;
+        for (auto& i : FinalArrayOfTips)
+        {
+            sum += i;
+        }
+
+        return sum;
+    }
+};
+
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+
+        int n;
+        scanf("%d", &n);
+
+        int x;
+        scanf("%d", &x);
+
+        int y;
+        scanf("%d", &y);
+
+        vector<int> arr(n);
+        Array::input(arr, n);
+
+        vector<int> brr(n);
+        Array::input(brr, n);
+
+        Solution obj;
+        long long res = obj.maxTip(n, x, y, arr, brr);
+
+        cout << res << endl;
+    }
+}
+
+// } Driver Code Ends
