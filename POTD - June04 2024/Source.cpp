@@ -10,6 +10,48 @@
 
 using namespace std;
 
+
+// Draft logs:
+
+/*
+Draft 1: 
+    Works for the sample test case, but not for other test cases. Particular test case failed on gfg:
+        Test case:
+        9
+        4
+        7
+        4 7 10 8 7 3 2 8 7
+        3 9 5 5 5 6 8 6 7
+        Code output:
+        67
+        Correct output:
+        66
+
+        Issue: This is happening whenever value of x is being exceeded because The replacements required (ReplacementNumber are only for the positive portion, which does not gaurantee that value of x will not be exceeded. So need to check on that.
+
+        Solution: In the line: `while (ReplacementNumber <= y && DifferenceArr[i].first >= 0)` , the condition for checking if the differnce is positive does not fit, and this is where we can add the condition for checking for x.
+        What I ended up doing is that I changed some conditions in a logical sense, such that the loop will not violate the limits of x, while still replacing the values with positive differences. Hopefully the submission works this time.
+
+
+Draft 2:
+	Solved the previous test case, but other test cases failed. Particular one from gfg:
+        Test case:
+        10
+        8
+        2
+        1 7 6 6 6 1 3 4 8 10
+        10 7 7 9 1 3 2 9 3 4
+        Code output:
+        69
+        Correct output:
+        66
+
+        Issue: The issue seems to be that the code is not following the correct logic for the replacement. It does not respect the limit of y. So need to check on that.
+
+	    Solution: 
+
+*/
+
 class Array {
 public:
     template <class T>
@@ -51,10 +93,26 @@ public:
 
         int i = n-1;
 
-        while (ReplacementNumber <= y && DifferenceArr[i].first >= 0)
+        while (ReplacementNumber <= y)
         {
-            FinalArrayOfTips[DifferenceArr[i].second] = brr.at(DifferenceArr[i].second);
-            ReplacementNumber++;
+            if (DifferenceArr[i].first >= 0)
+            {
+                FinalArrayOfTips[DifferenceArr[i].second] = brr.at(DifferenceArr[i].second);
+                ReplacementNumber++;
+            }
+            
+            else
+            {
+                if (n - ReplacementNumber > x)
+                {
+					FinalArrayOfTips[DifferenceArr[i].second] = brr.at(DifferenceArr[i].second);
+					ReplacementNumber++;
+				}
+                else
+                {
+					break;
+				}
+			}
             i--;
 
         }
