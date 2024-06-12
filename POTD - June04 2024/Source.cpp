@@ -48,8 +48,9 @@ Draft 2:
 
         Issue: The issue seems to be that the code is not following the correct logic for the replacement. It does not respect the limit of y. So need to check on that.
 
-	    Solution: 
+	    Solution: Simple solution was that ReplacementNumber should be checked for less than y, and not less than or equal to y. This will ensure that the limit of y is not exceeded, if it was including '=' then it would run the loop for one more time causing the replacement number to exceed the limit of y. So, I changed the condition in the while loop to `while (ReplacementNumber < y)`. This should work now.
 
+ Draft 3: Problem Solved!!
 */
 
 class Array {
@@ -93,7 +94,7 @@ public:
 
         int i = n-1;
 
-        while (ReplacementNumber <= y)
+        while (ReplacementNumber < y)
         {
             if (DifferenceArr[i].first >= 0)
             {
