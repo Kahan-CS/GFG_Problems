@@ -1,3 +1,18 @@
+﻿/*
+* Date of the problem: June 11, 2024
+* Problem Solved on: June 12, 2024 (3rd attempt)
+
+* Link to the problem: https://www.geeksforgeeks.org/problems/maximum-tip-calculator2631/1
+* Problem Description:
+    * In a restaurant, two waiters, A and B, receive n orders per day, earning tips as per arrays arr[i] and brr[i] respectively. If A takes the ith order, the tip is arr[i] rupees; if B takes it, the tip is brr[i] rupees.
+
+    To maximize total tips, they must distribute the orders such that:
+
+    A can handle at most x orders
+    B can handle at most y orders
+    Given that x + y ≥ n, all orders can be managed by either A or B. Return the maximum possible total tip after processing all the orders.
+*/
+
 //{ Driver Code Starts
 #include <iostream>
 #include <vector>
@@ -14,7 +29,7 @@ using namespace std;
 // Draft logs:
 
 /*
-Draft 1: 
+Draft 1:
     Works for the sample test case, but not for other test cases. Particular test case failed on gfg:
         Test case:
         9
@@ -34,7 +49,7 @@ Draft 1:
 
 
 Draft 2:
-	Solved the previous test case, but other test cases failed. Particular one from gfg:
+    Solved the previous test case, but other test cases failed. Particular one from gfg:
         Test case:
         10
         8
@@ -48,7 +63,7 @@ Draft 2:
 
         Issue: The issue seems to be that the code is not following the correct logic for the replacement. It does not respect the limit of y. So need to check on that.
 
-	    Solution: Simple solution was that ReplacementNumber should be checked for less than y, and not less than or equal to y. This will ensure that the limit of y is not exceeded, if it was including '=' then it would run the loop for one more time causing the replacement number to exceed the limit of y. So, I changed the condition in the while loop to `while (ReplacementNumber < y)`. This should work now.
+        Solution: Simple solution was that ReplacementNumber should be checked for less than y, and not less than or equal to y. This will ensure that the limit of y is not exceeded, if it was including '=' then it would run the loop for one more time causing the replacement number to exceed the limit of y. So, I changed the condition in the while loop to `while (ReplacementNumber < y)`. This should work now.
 
  Draft 3: Problem Solved!!
 */
@@ -92,7 +107,7 @@ public:
 
         int ReplacementNumber = 0;
 
-        int i = n-1;
+        int i = n - 1;
 
         while (ReplacementNumber < y)
         {
@@ -101,19 +116,19 @@ public:
                 FinalArrayOfTips[DifferenceArr[i].second] = brr.at(DifferenceArr[i].second);
                 ReplacementNumber++;
             }
-            
+
             else
             {
                 if (n - ReplacementNumber > x)
                 {
-					FinalArrayOfTips[DifferenceArr[i].second] = brr.at(DifferenceArr[i].second);
-					ReplacementNumber++;
-				}
+                    FinalArrayOfTips[DifferenceArr[i].second] = brr.at(DifferenceArr[i].second);
+                    ReplacementNumber++;
+                }
                 else
                 {
-					break;
-				}
-			}
+                    break;
+                }
+            }
             i--;
 
         }
