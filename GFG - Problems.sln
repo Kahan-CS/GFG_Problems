@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GFG Sprints", "GFG Sprints"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Easy-02-Second_Largest", "Easy-02-Second_Largest\Easy-02-Second_Largest.vcxproj", "{F4E301B5-64F5-47E3-928D-6A4CAE164C70}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Easy-03-Missing_number_in_array", "Easy-03-Missing_number_in_array\Easy-03-Missing_number_in_array.vcxproj", "{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -79,6 +81,14 @@ Global
 		{F4E301B5-64F5-47E3-928D-6A4CAE164C70}.Release|x64.Build.0 = Release|x64
 		{F4E301B5-64F5-47E3-928D-6A4CAE164C70}.Release|x86.ActiveCfg = Release|Win32
 		{F4E301B5-64F5-47E3-928D-6A4CAE164C70}.Release|x86.Build.0 = Release|Win32
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Debug|x64.ActiveCfg = Debug|x64
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Debug|x64.Build.0 = Debug|x64
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Debug|x86.ActiveCfg = Debug|Win32
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Debug|x86.Build.0 = Debug|Win32
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Release|x64.ActiveCfg = Release|x64
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Release|x64.Build.0 = Release|x64
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Release|x86.ActiveCfg = Release|Win32
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +100,7 @@ Global
 		{6474E011-A7FC-49B2-B77A-74047A0F0AA5} = {08A18FD2-10EF-49D5-B0AA-BF3B25B69A91}
 		{49371BDC-1B06-4FBA-95E5-553BFCB96ED5} = {A62D5F54-1BC2-484F-94D4-B8BBA00D2C88}
 		{F4E301B5-64F5-47E3-928D-6A4CAE164C70} = {A62D5F54-1BC2-484F-94D4-B8BBA00D2C88}
+		{BBE80EF8-4CDB-4E79-8F6D-9DAF4A917DD9} = {A62D5F54-1BC2-484F-94D4-B8BBA00D2C88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4DE9BF0-C6A4-4B83-A646-EA124CA18D98}
