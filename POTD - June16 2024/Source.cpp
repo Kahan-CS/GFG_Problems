@@ -1,6 +1,6 @@
 /*
 * Date of the problem: June 16, 2024
-* Problem Solved on: Not solved yet 
+* Problem Solved on: June 28, 2024
 
 * Link to the problem: https://www.geeksforgeeks.org/problems/sum-of-prime4751/1
 * Problem Description:
@@ -8,7 +8,11 @@
       Note: If [a, b] is one solution with a <= b, and [c, d] is another solution with c <= d, and a < c then  [a, b] is considered as our answer.
 */
 
-
+// Draft log
+/*
+* Draft 1:
+    Solved in one go! Thanks to sieve of eratosthenes!!
+*/
 
 //{ Driver Code Starts
 #include <iostream>
